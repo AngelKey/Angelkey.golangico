@@ -10,7 +10,7 @@ import (
 	"image/png"
 	"io"
 
-	bmp "github.com/jsummers/gobmp"
+	"golang.org/x/image/bmp"
 )
 
 func init() {

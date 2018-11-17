@@ -1,20 +1,19 @@
 package ico
 
 import (
+	"bufio"
 	"bytes"
 	"encoding/binary"
 	"image"
+	"image/draw"
 	"image/png"
 	"io"
-	"image/draw"
-	"bufio"
 )
 
 func Encode(w io.Writer, im image.Image) error {
 	b := im.Bounds()
 	m := image.NewRGBA(b)
 	draw.Draw(m, b, im, b.Min, draw.Src)
-
 	header := head{
 		0,
 		1,
